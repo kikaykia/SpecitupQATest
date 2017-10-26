@@ -87,7 +87,6 @@ namespace SpecitupQATest
             //
 
             var homeDashboardPage = new HomeDashBoardPage(PropertiesCollection.driver);
-            //homeDashboardPage.ClickAutoOptionsLink();
 
         }
 
