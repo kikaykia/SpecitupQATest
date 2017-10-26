@@ -15,14 +15,11 @@ namespace SpecitupQATest
     /// <summary>
     /// Summary description for UnitTest1
     /// </summary>
-    //[TestClass]
+    //[Test]
     public class UnitTest1
     {
         public UnitTest1()
         {
-            //
-            // TODO: Add constructor logic here
-            //
         }
 
         private TestContext testContextInstance;
@@ -72,38 +69,34 @@ namespace SpecitupQATest
         [SetUp]
         public void Initialize()
         {
-            PropertiesCollection.driver = new ChromeDriver();
-            PropertiesCollection.driver.Navigate().GoToUrl("https://specitupv3test.cloudapp.net/Account/Login");
-            //_browser.Navigate().GoToUrl("https://specitupv3test.cloudapp.net/Account/Login");
+            BrowserFactory.InitBrowser("Chrome");
+            BrowserFactory.LoadApplication("https://specitupv3test.cloudapp.net/Account/Login");
         }
         
-
         [Test]
         public void TestMethod1()
-        {            
-            //ChromeDriver _browser = new ChromeDriver("C:\\Users\\kiara\\Documents\\SPEC\\automation\\");
-            //_browser.Navigate().GoToUrl("https://specitupv3test.cloudapp.net/Account/Login");
+        {
+            //var driver = PropertiesCollection.driver.Url;
             var loginPage = new LoginPage(PropertiesCollection.driver);
             loginPage.LoginToApplication();
 
-            
+            //PropertiesCollection.driver. .WebDriver.attachToSession(executor, session_id);
+
+            var baseClassPage = new BaseClass();
+            baseClassPage.NavigateToMenus("Manage", "Sales Types");
+            //
 
             var homeDashboardPage = new HomeDashBoardPage(PropertiesCollection.driver);
-            homeDashboardPage.ClickAutoOptionsLink();
-           
+            //homeDashboardPage.ClickAutoOptionsLink();
 
         }
-
-
-
 
         // This closes the driver down after the test has finished.  
         [TearDown]
         public void TearDown()
         {
-            //Chrome.Quit();  
-            PropertiesCollection.driver.Close();
-            Console.WriteLine("Closed the browser.");
+            BrowserFactory.CloseAllDrivers();
+            //Console.WriteLine("Closed the browser.");
 
         }
     }

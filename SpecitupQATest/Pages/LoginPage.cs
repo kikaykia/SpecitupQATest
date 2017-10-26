@@ -51,13 +51,13 @@ namespace SpecitupQATest.Pages
             //Submit.Submit();
 
             //OPTION #2:
-            BaseClass.EnterText("EmailAddress", "kiara.imbong+demo1@gmail.com", PropertyType.Id);
-            BaseClass.EnterText("Password", "qa12345", PropertyType.Id);
+            BaseClass.EnterText(BaseClass.SelectorType.Id, "EmailAddress", "kiara.imbong+demo1@gmail.com");
+            BaseClass.EnterText(BaseClass.SelectorType.Id, "Password", "qa12345");
 
             //Console.Write("The username is:" + BaseClass.GetText(_driver, "EmailAddress", PropertyType.Id));
             //Console.Write("The password is:" + BaseClass.GetText(_driver, "Password", PropertyType.Id));
 
-            BaseClass.Click("btn-primary", PropertyType.ClassName);
+            BaseClass.Click(BaseClass.SelectorType.ClassName,"btn-primary");
         }
 
         //Check if user is directed to the homepage

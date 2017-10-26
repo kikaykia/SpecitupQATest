@@ -8,20 +8,11 @@ using System.Threading.Tasks;
 namespace SpecitupQATest.Pages
 {
 
-    public enum PropertyType
-    {
-        Id,
-        Name,
-        ClassName
-
-    }
-
-
     public class PropertiesCollection
     {
 
         //Auto-implemented Poperty
         public static IWebDriver driver { get; set; }
-           
+
     }
 }
