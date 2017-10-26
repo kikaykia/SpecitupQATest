@@ -87,7 +87,7 @@ namespace SpecitupQATest
             //
 
             var homeDashboardPage = new HomeDashBoardPage(PropertiesCollection.driver);
-
+            homeDashboardPage.GetType();
         }
 
         // This closes the driver down after the test has finished.  
